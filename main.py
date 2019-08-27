@@ -1,12 +1,13 @@
 import ptbot
-import os
+import settings
+
 from pytimeparse import parse
 from progressbar import render_progressbar
 
-token = os.getenv('APIBOT')
-chat_id = os.getenv('CHAT_ID')
+api_key = settings.APIKEY
+chat_id = settings.CHAT_ID
 
-bot = ptbot.Bot(token)
+bot = ptbot.Bot(api_key)
 bot.send_message(chat_id, 'На сколько запустить таймер?')
 
 def notify_progress(secs_left, message_id, time):
